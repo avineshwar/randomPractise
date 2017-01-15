@@ -107,7 +107,7 @@ public class AdditionWithoutOperator {
 			stringBuilder.append(integer);
 		}
 
-		System.out.println("Decimal representation is: " + stringBuilder.toString());
+		System.out.println("Binary representation is: " + stringBuilder.toString());
 
 		// System.out.println(Integer.toString(Integer.parseInt(stringBuilder.toString()),
 		// 9));
