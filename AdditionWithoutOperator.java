@@ -5,6 +5,7 @@ import java.util.*;
 
 public class AdditionWithoutOperator {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int operand_1 = scanner.nextInt();
 		int operand_2 = scanner.nextInt();
@@ -45,8 +46,6 @@ public class AdditionWithoutOperator {
 				integers2.add(0);
 				size_2++;
 			}
-			System.out.println(integers.toString());
-			System.out.println(integers2.toString());
 		} else if (size_2 > size_1) { // integers needs to have more zeroes!
 			size_1++;
 			integers.add(0);
@@ -54,13 +53,18 @@ public class AdditionWithoutOperator {
 				integers.add(0);
 				size_1++;
 			}
-			System.out.println(integers.toString());
-			System.out.println(integers2.toString());
-
 		} else {
-			System.out.println(integers.toString());
-			System.out.println(integers2.toString());
 		}
+
+		if (size_1 % 2 != 0 || size_2 % 2 != 0) {
+			size_1++;
+			size_2++;
+			integers.add(0);
+			integers2.add(0);
+		}
+
+		System.out.println(integers.toString());
+		System.out.println(integers2.toString());
 
 		ArrayList<Integer> integers3 = new ArrayList<Integer>();
 		int carry = 0;
@@ -107,7 +111,7 @@ public class AdditionWithoutOperator {
 			stringBuilder.append(integer);
 		}
 
-		System.out.println("Binary representation is: " + stringBuilder.toString());
+		System.out.println("Reverse binary representation is: " + stringBuilder.toString());
 
 		// System.out.println(Integer.toString(Integer.parseInt(stringBuilder.toString()),
 		// 9));
